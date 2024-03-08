@@ -1,0 +1,22 @@
+.landing {
+  &.dark {
+    background-color: #242424;
+    color: #fff;
+  }
+
+  width: 100%;
+  height: auto;
+  transition: $base-transition;
+}
+
+.profile {
+  @include column-flexbox;
+
+  width: 42rem;
+}
+
+.buttons {
+  @include inline-flexbox(between);
+
+  width: 42rem;
+}

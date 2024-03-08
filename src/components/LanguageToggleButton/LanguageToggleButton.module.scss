@@ -1,0 +1,89 @@
+.language-button {
+  margin: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.language-button-label {
+  width: 12rem;
+  height: 5rem;
+  position: relative;
+  display: block;
+  background: linear-gradient(to right, blue, $white);
+  border-radius: 2.5rem;
+  box-shadow:
+    inset 0 0.5rem 1.5rem rgb(0 0 0 / 40%),
+    inset 0 -0.5rem 1.5rem rgb(255 255 255 / 40%);
+  cursor: pointer;
+  transition: $base-transition;
+}
+
+.language-button-label::after {
+  content: '';
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  bottom: 0.5rem;
+  background: linear-gradient(180deg, rgb(124 113 109), blue);
+  border-radius: 2rem;
+  box-shadow: 0 0.1rem 0.01rem rgba(0 0 0 / 20%);
+  transition: $base-transition;
+}
+
+.language-button-toggle {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.language-button-toggle:checked + .language-button-label {
+  background: linear-gradient(to right, $white, red);
+}
+
+.language-button-label:active::after {
+  width: 6rem;
+}
+
+.language-button-toggle:checked + .language-button-label::after {
+  left: 11.5rem;
+  transform: translateX(-100%);
+  background: linear-gradient(180deg, rgb(124 113 109), red);
+}
+
+.language-button-label .word {
+  @include text-style(24, $white, bold);
+
+  line-height: 3rem;
+  position: absolute;
+  width: 3.5rem;
+  top: 1rem;
+  z-index: 100;
+  text-align: center;
+  transition: $base-transition;
+}
+
+.language-button-label .ko {
+  left: 0.75rem;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.language-button-label .en {
+  left: 7.75rem;
+  color: #7e7e7e;
+  transition: 0.3s;
+}
+
+.language-button-toggle:checked + .language-button-label .ko {
+  color: #7e7e7e;
+}
+
+.language-button-toggle:checked + .language-button-label .en {
+  color: #fff;
+}

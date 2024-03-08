@@ -1,0 +1,39 @@
+---
+title: 'Next.js 입문'
+date: '2024-03-06'
+category: '코딩'
+subCategory: 'Next.js'
+language: 'ko'
+---
+
+# Next.js 입문
+
+Next.js는 리액트 기반의 프레임워크로, 서버 사이드 렌더링(SSR), 정적 사이트 생성(SSG), 그리고 여러 최적화 기능을 제공합니다.
+
+## SSR과 SSG의 차이
+
+Next.js에서는 두 가지 주요 렌더링 방식을 제공합니다: SSR과 SSG. SSR은 요청 시마다 콘텐츠를 서버에서 렌더링하는 반면, SSG는 빌드 시 콘텐츠를 정적으로 생성합니다.
+
+```javascript
+// SSR 예시
+export async function getServerSideProps(context) {
+  // 데이터를 서버에서 불러옵니다
+  return {
+    props: {}, // 페이지 컴포넌트로 전달될 props
+  };
+}
+```
+
+```javascript
+// SSG 예시
+export async function getStaticProps(context) {
+  // 빌드 시 데이터를 불러옵니다
+  return {
+    props: {}, // 페이지 컴포넌트로 전달될 props
+  };
+}
+```
+
+## Next.js의 장점
+
+Next.js는 개발 효율성과 성능 최적화를 위한 다양한 기능을 제공합니다. 예를 들어, 이미지 최적화, 국제화(i18n), 그리고 환경 변수 설정 등이 있습니다.

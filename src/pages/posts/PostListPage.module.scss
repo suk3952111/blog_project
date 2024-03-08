@@ -1,0 +1,21 @@
+.list {
+  @include inline-flexbox;
+}
+
+.category {
+  @include column-flexbox(center, center);
+  @include text-style(24, light);
+
+  &p {
+    @include text-style(24, bold);
+  }
+
+  width: 42rem;
+}
+
+.cards {
+  @include no-scrollbar;
+
+  height: 60vh;
+  overflow: scroll;
+}

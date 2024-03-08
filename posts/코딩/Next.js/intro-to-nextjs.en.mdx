@@ -1,0 +1,39 @@
+---
+title: 'Introduction to Next.js'
+date: '2024-03-06'
+category: 'Coding'
+subCategory: 'Next.js'
+language: 'en'
+---
+
+# Introduction to Next.js
+
+Next.js is a React-based framework offering server-side rendering (SSR), static site generation (SSG), and various optimization features.
+
+## The Difference Between SSR and SSG
+
+Next.js provides two main rendering methods: SSR and SSG. SSR renders content from the server on each request, while SSG generates content statically at build time.
+
+```javascript
+// SSR example
+export async function getServerSideProps(context) {
+  // Fetch data from the server
+  return {
+    props: {}, // Props to be passed to the page component
+  };
+}
+```
+
+```javascript
+// SSG example
+export async function getStaticProps(context) {
+  // Fetch data at build time
+  return {
+    props: {}, // Props to be passed to the page component
+  };
+}
+```
+
+## Advantages of Next.js
+
+Next.js offers various features for development efficiency and performance optimization. For example, it includes image optimization, internationalization (i18n), and environment variable settings.
